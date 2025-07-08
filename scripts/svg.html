@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+</head>
+
+<body>
+    <div id="canvas"></div>
+    <script>
+        const draw = SVG().addTo('#canvas').size(600, 400);
+        const steps = [
+            { text: "Step 1: Input Data still more data and stuff", y: 100 },
+            { text: "Step 2: Process", y: 200 },
+            { text: "Step 3: Output", y: 300 }
+        ];
+
+        steps.forEach((step, i) => {
+            draw.text(step.text)
+                .move(300, step.y)
+                .font({ size: 20 })
+                .opacity(0)
+                .animate({ delay: i * 100 })
+                .opacity(1);
+        });
+    </script>
+</body>
+
+</html>
